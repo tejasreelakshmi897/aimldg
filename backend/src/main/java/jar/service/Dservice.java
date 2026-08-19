@@ -11,11 +11,13 @@ import jar.repo.StudentRepo;
 public class Dservice {
 
     StudentRepo db;
-    Dservice( StudentRepo db){
-        this.db=db;
+
+    public Dservice(StudentRepo db) {
+        this.db = db;
     }
 
-    Map<Object, Object> ds(Integer id) {
+    public Map<Object, Object> ds(Integer id) {
+
         Map<Object, Object> res = new HashMap<>();
 
         if (db.existsById(id)) {
@@ -31,7 +33,7 @@ public class Dservice {
             res.put("status", 404);
 
         }
+
         return res;
     }
-
 }
